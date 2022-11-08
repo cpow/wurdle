@@ -18,16 +18,43 @@
   margin-bottom: 10px;
 }
 
+%gridItem {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 60px;
+   height: 60px;
+   font-weight: bold;
+   font-size: 24px;
+   text-transform: capitalize;
+   border: 2px solid #D3D3D3;
+ }
+
 .gridItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  font-weight: bold;
-  font-size: 24px;
-  text-transform: capitalize;
-  border: 2px solid #D3D3D3;
+  @extend %gridItem;
+}
+
+.past-gridItem {
+  @extend %gridItem;
+  border: 2px solid #282c34;
+}
+
+.guessed-gridItem {
+  @extend %gridItem;
+  border: 2px solid red;
+}
+
+.selected-gridItem {
+  @extend %gridItem;
+  border: 2px solid #282c34;
+  animation-name: pop-in;
+  animation-duration: 0.2s;
+}
+
+@keyframes pop-in {
+  0% {}
+  50% {border: 4px solid #282c34;}
+  100% {border: 2px solid #282c34;}
 }
 
 @media (prefers-reduced-motion: no-preference) {
